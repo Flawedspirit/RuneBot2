@@ -1,7 +1,5 @@
 module.exports = (client) => {
     client.handleEvents = async (eventFiles, path) => {
-        console.log("Events: " + path);
-
         for (const file of eventFiles) {
             const event = require(`${path}/${file}`);
 

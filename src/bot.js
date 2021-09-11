@@ -4,7 +4,6 @@ const Logger = require('./logger');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
-client.logger = new Logger();
 
 require('dotenv').config();
 
@@ -16,6 +15,10 @@ const functions = fs.readdirSync('./src/functions').filter(file => file.endsWith
     for(file of functions) {
         require(`./functions/${file}`)(client);
     }
+
+    client.logger = new Logger(!!+process.env.LOG_TIMESTAMPS);
+    client.logger.log("Initialized logger.");
+
     client.handleEvents(events, '../events');
     client.handleCommands(commands, '../commands');
     client.login(process.env.TOKEN);

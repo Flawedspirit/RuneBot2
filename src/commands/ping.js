@@ -25,6 +25,6 @@ module.exports = {
     .setDescription('Pings the bot to make sure it\'s paying attention.'),
     async execute(interaction) {
         let choice = ~~(Math.random() * responses.length);
-        await interaction.reply(responses[choice]);
+        await interaction.reply({ content: responses[choice], ephemeral: true });
     },
 };

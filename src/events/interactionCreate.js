@@ -10,8 +10,8 @@ module.exports = {
         try {
             await command.execute(interaction);
         } catch (error) {
-            console.error(error);
-            await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+            client.logger.logError(error);
+            await interaction.reply({ content: 'Command error: ' + error });
         }
     },
 };
