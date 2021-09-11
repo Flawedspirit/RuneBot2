@@ -1,0 +1,35 @@
+{
+  "name": "runebot",
+  "version": "2.0.0",
+  "description": "A bot with useful commands for Old School Runescape",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "generate-docs": "jsdoc -c .jsdoc.json --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Flawedspirit/RuneBot2.0"
+  },
+  "keywords": [
+    "2007scape",
+    "runescape",
+    "oldschool",
+    "rs2",
+    "osrs"
+  ],
+  "author": "Flawedspirit",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "ascii-table": "^0.0.9",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jsdoc": "^3.6.7",
+    "jsdoc-template": "github:braintree/jsdoc-template"
+  }
+}
